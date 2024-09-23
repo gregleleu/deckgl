@@ -9,8 +9,9 @@ export default function(props, widgetElement) {
   if (HTMLWidgets.shinyMode) {
     props.onClick = function(info) {
       const data = {
-        lng: info.lngLat[0],
-        lat: info.lngLat[1],
+        lng: info.coordinate[0],
+        lat: info.coordinate[1],
+        layer : info.layer.id,
         object: info.object
       };
       Shiny.onInputChange(widgetElement.id + "_onclick", data);
