@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "build-dev": "webpack src/index.js --mode development -o ../inst/htmlwidgets/lib/widget/bundle-dev.js",
-    "start": "webpack-dev-server src/test.js --mode development --open"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; webpack",
+    "build-dev": "export NODE_OPTIONS=--openssl-legacy-provider; webpack src/index.js --mode development -o ../inst/htmlwidgets/lib/widget/bundle-dev.js",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider; webpack-dev-server src/test.js --mode development --open"
   },
   "keywords": [],
   "author": "Stefan Kuethe",
@@ -15,9 +15,9 @@
   "devDependencies": {
     "css-loader": "^3.4.2",
     "style-loader": "^1.1.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "d3-color": "^1.4.0",
