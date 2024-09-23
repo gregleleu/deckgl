@@ -7,6 +7,8 @@ export function createDeckGLProperties(widgetData) {
      initialViewState: widgetData.initialViewState || createInitialViewState(widgetData),
      views: widgetData.views || new deck.MapView(),
      controller: true,
+     onLoad: HTMLWidgets.shinyMode ? () => {Shiny.setInputValue(widgetData.container + "_loaded", true)} : () => {},
+     onClick: HTMLWidgets.shinyMode ? (info) => {Shiny.setInputValue(widgetData.container + "_click_gen", info)} : (info) => {},
      layers: [ ]
    }, widgetData.properties);
 }
@@ -23,7 +25,7 @@ function createInitialViewState(widgetData) {
 }
 
 export function logVersions() {
-  console.log("deck.gl", deck.version);
+  console.log("deck.gl", deck.VERSION);
   if (typeof mapboxgl !== "undefined") console.log("mapbox-gl", mapboxgl.version);
 }
 
