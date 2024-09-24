@@ -45,6 +45,13 @@ function setViewState(viewState) {
   viz.deckGL.setProps({ initialViewState: viewState });
 }
 
+function setProps(args) {
+  console.log("coucou")
+  console.log(args)
+  const viz = this;
+  viz.deckGL.setProps(args);
+}
+
 // TODO: Must be global, so that they can be extended by other libs
 const funcs = {
   addLayer,
@@ -52,7 +59,8 @@ const funcs = {
   addControl,
   addLegend,
   addJSONEditor,
-  setViewState
+  setViewState,
+  setProps
 };
 
 export default function(widgetElement, width, height) {
