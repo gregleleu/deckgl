@@ -15,7 +15,7 @@ mapbox-gl:
   package: deckgl
 h3-js:
   name: h3-js
-  version: 3.4.3
+  version: 4.1.0
   src: htmlwidgets/lib/h3
   script: h3-js.umd.js
   all_files: false
